@@ -20,7 +20,7 @@ if not os.path.isfile(repo + '/numpy/' + np_whl) or not os.path.isfile(repo + '/
     run([repo + "/../build-numpy-pypy.sh", pypy], check=True)
     if not os.path.isfile(repo + '/../' + np_whl) or not os.path.isfile(repo + '/../' + sp_whl):
         raise RuntimeError("Build succeeded, but expected wheels not found!")
-    shutil.move(repo + "/../" + np_whl, repo + "/numpy/")
-    shutil.move(repo + "/../" + sp_whl, repo + "/scipy/")
+    shutil.move(repo + "/../" + np_whl, repo + "/numpy/" + np_whl)
+    shutil.move(repo + "/../" + sp_whl, repo + "/scipy/" + sp_whl)
     print("Generated new " + np_whl + " and " + sp_whl + " pypy wheels")
 
